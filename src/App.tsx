@@ -22,6 +22,10 @@ function App() {
 
   const connect = () => {
     const ws = new WebSocket('ws://localhost:3000/websocket')
+    ws.onopen = () => {
+      console.log('open')
+      ws.send('foobar')
+    }
   }
 
   return (
